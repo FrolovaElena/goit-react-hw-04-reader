@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Loader from './components/Loader';
 import './index.css';
@@ -12,11 +12,11 @@ const Reader = Loadable({
 });
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter basename="/">
     <Switch>
       <Route path="/reader" component={Reader} />
       <Redirect to="/reader" />
     </Switch>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root'),
 );

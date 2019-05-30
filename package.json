@@ -23,7 +23,7 @@
     "lint:fix": "eslint src/**/*.js --fix",
     "lint:format": "prettier src/**/*.{js,css,json} --write",
     "predeploy": "npm run build",
-    "deploy": "mv build/index.html build/200.html && surge -p build -d app-deployment.surge.sh"
+    "deploy": "gh-pades -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,5 +51,5 @@
     "lint-staged": "^8.1.5",
     "prettier": "^1.17.0"
   },
-  "homepage": "https://frolovaelena.github.io/goit-react-hw-04-reader/"
+  "homepage": "https://frolovaelena.github.io/goit-react-hw-04-reader/build/"
 }
