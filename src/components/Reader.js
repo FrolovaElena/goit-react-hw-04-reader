@@ -20,16 +20,13 @@ export default class ReaderPublicationPage extends Component {
   componentDidMount() {
     const { history, location } = this.props;
     const { index } = this.state;
-    const currentItem = index + 1;
     const { item } = queryString.parse(location.search);
+    const currentIndex = Number(item) - 1;
 
-    if (item)
-      return history.push({
-        search: `?item=${currentItem}`,
-      });
+    if (item) this.setState({ index: currentIndex });
 
     return history.push({
-      search: '?item=1',
+      search: `?item=${index + 1}`,
     });
   }
 
